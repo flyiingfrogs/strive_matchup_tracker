@@ -1,0 +1,14 @@
+.app-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+app-character-sidebar { 
+    flex: 1;
+    background: red;
+} 
+app-character-details { 
+    flex: 7;
+    background: blue;
+}
