@@ -22,7 +22,6 @@ export class CharacterDetails {
   characters = CHARACTERS;
 
   @Input() set selectedChar(value: string | null) {
-    console.log('selectedChar received', value);
 
     if (value == null) {
       return;

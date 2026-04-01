@@ -19,7 +19,6 @@ export class PuddleFarmService {
   }
 
   getPlayerMatchups(playerId: string, charId: string, history: number = this.ALL_TIME_DURATION): Observable<MatchupCharResponse> {
-    console.log("api link", `/api/matchups/${playerId}/${charId}/${history}`)
     return this.http.get<MatchupCharResponse>(`/api/matchups/${playerId}/${charId}/${history}`)
   }
 }
