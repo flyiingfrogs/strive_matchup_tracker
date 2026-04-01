@@ -27,8 +27,12 @@ export class App implements OnInit {
     this.playerId = id;
   }
 
-  onCharSelected(charId: string){
+  onCharSelected(charId: string) {
     this.selectedChar = charId;
   }
 
+  resetPlayer() {
+    localStorage.removeItem('playerId');
+    this.playerId = null;
+  }
 }

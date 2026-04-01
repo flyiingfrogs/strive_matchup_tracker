@@ -1,4 +1,5 @@
 @if (playerId) {
+  <button (click)="resetPlayer()">Change Player</button>
   <div class="app-container">
     <app-character-sidebar (charSelected)="onCharSelected($event)"></app-character-sidebar>
     <app-character-details [selectedChar]="selectedChar"></app-character-details>
