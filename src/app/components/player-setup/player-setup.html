@@ -4,8 +4,8 @@
 <input type="text" [(ngModel)]="searchQuery" placeholder="Enter your Steam username" />
 <button (click)="onSearch()">Search</button>
 
-@for (result of searchResults; track result.id) {
-    <div (click)="selectPlayer(result)">{{result.name}}</div>
+@for (result of searchResults$ | async; track result.id) {
+    <div class="player-name" (click)="selectPlayer(result)">{{result.name}}</div>
 }
 <div>
     
