@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-character-details',
@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './character-details.html',
   styleUrl: './character-details.scss',
 })
-export class CharacterDetails {}
+export class CharacterDetails {
+
+  @Input() selectedChar: string | null = null;
+}

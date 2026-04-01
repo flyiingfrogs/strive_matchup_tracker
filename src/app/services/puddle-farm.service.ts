@@ -12,10 +12,10 @@ export class PuddleFarmService {
   constructor(private http: HttpClient) {}
 
   searchPlayer(name: string): Observable<SearchResponse> {
-    return this.http.get<SearchResponse>(`https://puddle.farm/api/player/search?search_string=${name}`);
+    return this.http.get<SearchResponse>(`/api/player/search?search_string=${name}`);
   }
 
   getPlayerMatchups(playerId: number, charId: string, history: number = this.ALL_TIME_DURATION): Observable<MatchupCharResponse> {
-    return this.http.get<MatchupCharResponse>(`https://puddle.farm/api/matchups/${playerId}/${charId}/${history}`)
+    return this.http.get<MatchupCharResponse>(`/api/matchups/${playerId}/${charId}/${history}`)
   }
 }

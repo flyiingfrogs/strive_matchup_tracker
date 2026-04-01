@@ -1,9 +1,10 @@
-@if (!playerId) {
+@if (playerId) {
   <div class="app-container">
-    <app-character-sidebar></app-character-sidebar>
-    <app-character-details></app-character-details>
+    <app-character-sidebar (charSelected)="onCharSelected($event)"></app-character-sidebar>
+    <app-character-details [selectedChar]="selectedChar"></app-character-details>
+
   </div>
 } @else {
 
-  <app-player-setup></app-player-setup>
+  <app-player-setup (playerSelected)="onPlayerSelected($event)"></app-player-setup>
 }

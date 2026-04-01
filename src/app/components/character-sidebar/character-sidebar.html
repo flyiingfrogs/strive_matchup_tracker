@@ -1,1 +1,4 @@
 <p>character-sidebar works!</p>
+@for (char of characters | keyvalue; track char.key) {
+    <div (click)="onCharClick(char.key)">{{ char.value }}</div>
+}
