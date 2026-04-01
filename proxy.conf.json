@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://puddle.farm",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

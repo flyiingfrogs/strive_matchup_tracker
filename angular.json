@@ -64,6 +64,7 @@
               "buildTarget": "strive_matchup_tracker:build:production"
             },
             "development": {
+              "proxyConfig": "proxy.conf.json",
               "buildTarget": "strive_matchup_tracker:build:development"
             }
           },
