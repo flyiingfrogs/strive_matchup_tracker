@@ -15,7 +15,7 @@ export class PlayerSetup {
   searchQuery: string = '';
   searchResults: PlayerSearchResponse[] = [];
 
-  @Output() playerSelected = new EventEmitter<number>();
+  @Output() playerSelected = new EventEmitter<string>();
 
   onSearch() {
     console.log('search clicked', this.searchQuery);
@@ -30,7 +30,8 @@ export class PlayerSetup {
 
   selectPlayer(player: PlayerSearchResponse) {
     console.log('selectPlayer called', player)
-    localStorage.setItem('playerId', player.id.toString());
+    console.log('id type: ', typeof player.id);
+    localStorage.setItem('playerId', player.id);
     console.log('localStorage set', localStorage.getItem('playerId'));
     this.playerSelected.emit(player.id);
     console.log('event emitted');

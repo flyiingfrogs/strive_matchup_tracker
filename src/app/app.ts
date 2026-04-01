@@ -12,18 +12,18 @@ import { PlayerSetup } from './components/player-setup/player-setup';
 })
 export class App implements OnInit {
 
-  playerId: number | null = null;
+  playerId: string | null = null;
   selectedChar: string | null = null;
   
   ngOnInit() {
     const savedId = localStorage.getItem('playerId');
 
     if (savedId) {
-      this.playerId = Number(savedId);
+      this.playerId = savedId;
     }
   }
 
-  onPlayerSelected(id: number) {
+  onPlayerSelected(id: string) {
     this.playerId = id;
   }
 

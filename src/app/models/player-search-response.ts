@@ -1,5 +1,5 @@
 export interface PlayerSearchResponse {
-    id: number;
+    id: string;
     name: string;
     rating: number;
     deviation: number;
