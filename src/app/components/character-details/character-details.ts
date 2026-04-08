@@ -31,23 +31,5 @@ export class CharacterDetails {
     });
   }
 
-  // matchups$: Observable<MatchupEntry[]> | null = null;
-  // _selectedChar: string | null = null;
-  // characters = CHARACTERS;
-
-  // @Input() set selectedChar(value: string | null) {
-
-  //   if (value == null) {
-  //     return;
-  //   }
-
-  //   this._selectedChar = value;
-
-  //   this.matchups$ = this.puddle.getPlayerMatchups(localStorage.getItem('playerId')!, value).pipe(
-  //     map(response => response.matchups)
-  //   );
-  // }
-  
-
 
 }
