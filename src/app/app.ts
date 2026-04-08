@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CharacterSidebar } from './components/character-sidebar/character-sidebar';
 import { CharacterDetails } from './components/character-details/character-details';
 import { PlayerSetup } from './components/player-setup/player-setup';
-
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [CharacterSidebar, CharacterDetails, PlayerSetup],
+  imports: [CharacterSidebar, CharacterDetails, PlayerSetup, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

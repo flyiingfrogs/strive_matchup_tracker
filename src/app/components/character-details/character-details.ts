@@ -1,11 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { PuddleFarmService } from '../../services/puddle-farm.service';
 import { MatchupEntry } from '../../models/matchup-entry';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AsyncPipe } from '@angular/common';
 import { CHARACTERS } from '../../data/characters';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-character-details',
@@ -15,24 +15,38 @@ import { CHARACTERS } from '../../data/characters';
 })
 export class CharacterDetails {
 
-  constructor(private puddle: PuddleFarmService) {}
-
+  route: ActivatedRoute = inject(ActivatedRoute);
+  selectedCharRoute: string | null = null;
   matchups$: Observable<MatchupEntry[]> | null = null;
-  _selectedChar: string | null = null;
   characters = CHARACTERS;
 
-  @Input() set selectedChar(value: string | null) {
-
-    if (value == null) {
-      return;
-    }
-
-    this._selectedChar = value;
-
-    this.matchups$ = this.puddle.getPlayerMatchups(localStorage.getItem('playerId')!, value).pipe(
-      map(response => response.matchups)
-    );
+  constructor(private puddle: PuddleFarmService) {
+    this.route.params.subscribe(params => {
+      this.selectedCharRoute = params['id']
+    
+      console.log(this.selectedCharRoute);
+      this.matchups$ = this.puddle.getPlayerMatchups(localStorage.getItem('playerId')!, this.selectedCharRoute!).pipe(
+        map(response => response.matchups)
+      );
+    });
   }
+
+  // matchups$: Observable<MatchupEntry[]> | null = null;
+  // _selectedChar: string | null = null;
+  // characters = CHARACTERS;
+
+  // @Input() set selectedChar(value: string | null) {
+
+  //   if (value == null) {
+  //     return;
+  //   }
+
+  //   this._selectedChar = value;
+
+  //   this.matchups$ = this.puddle.getPlayerMatchups(localStorage.getItem('playerId')!, value).pipe(
+  //     map(response => response.matchups)
+  //   );
+  // }
   
 
 

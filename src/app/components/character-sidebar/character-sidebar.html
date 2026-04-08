@@ -1,3 +1,3 @@
 @for (char of characters | keyvalue; track char.key) {
-    <div class="character-item" (click)="onCharClick(char.key)">{{ char.value }}</div>
+    <div [routerLink]="['/character', char.key]">{{ char.value}} router module link</div>
 }

@@ -3,6 +3,6 @@
 }
 @else {
     @for (matchup of matchups$ | async; track matchup.char_name) {
-        <div>Out of {{ matchup.total_games }}, you won {{ matchup.wins}} games as {{ _selectedChar ? characters[_selectedChar] : '' }} against {{ characters[matchup.char_short] }}</div>
+        <div>Out of {{ matchup.total_games }}, you won {{ matchup.wins}} games as {{ selectedCharRoute ? characters[selectedCharRoute] : '' }} against {{ characters[matchup.char_short] }}</div>
     }
 }
