@@ -19,12 +19,11 @@ export class CharacterDetails {
   selectedCharRoute: string | null = null;
   matchups$: Observable<MatchupEntry[]> | null = null;
   characters = CHARACTERS;
-
-  constructor(private puddle: PuddleFarmService) {
+  puddle = inject(PuddleFarmService);
+  constructor() {
     this.route.params.subscribe(params => {
       this.selectedCharRoute = params['id']
     
-      console.log(this.selectedCharRoute);
       this.matchups$ = this.puddle.getPlayerMatchups(localStorage.getItem('playerId')!, this.selectedCharRoute!).pipe(
         map(response => response.matchups)
       );
