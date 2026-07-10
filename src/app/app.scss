@@ -4,6 +4,19 @@
     height: 100vh;
 }
 
+.player-btn-bar {
+    background: var(--accent);
+    padding: 2px;
+}
+
+.player-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 app-character-sidebar { 
     flex: 2;
     background: var(--bg-primary);
