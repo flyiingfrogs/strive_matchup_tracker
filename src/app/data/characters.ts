@@ -30,5 +30,7 @@ export const CHARACTERS: { [key: string]: string} = {
     'DI': 'Queen Dizzy',
     'VE': 'Venom',
     'UN': 'Unika',
-    'LU': 'Lucy'
+    'LU': 'Lucy',
+    'JA': 'Jam',
+    'RK': 'Robo-Ky'
 }
