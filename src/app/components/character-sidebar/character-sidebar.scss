@@ -1,3 +1,9 @@
+:host {
+    overflow-y: auto;
+    display: block;
+}
+
 .character-item {
+    padding: 4px;
     cursor: pointer;
 }

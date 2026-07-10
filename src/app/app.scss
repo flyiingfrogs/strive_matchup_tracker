@@ -5,10 +5,6 @@
 }
 
 app-character-sidebar { 
-    flex: 1;
-    background: red;
+    flex: 2;
+    background: var(--bg-primary);
 } 
-app-character-details { 
-    flex: 7;
-    background: blue;
-}
