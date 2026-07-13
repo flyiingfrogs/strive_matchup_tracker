@@ -1,8 +1,11 @@
-@if ((matchups$ | async)?.length == 0) {
-    <div>No games with this character</div>
-}
-@else {
-    @for (matchup of matchups$ | async; track matchup.char_name) {
-        <div>Out of {{ matchup.total_games }}, you won {{ matchup.wins}} games as {{ selectedCharRoute ? characters[selectedCharRoute] : '' }} against {{ characters[matchup.char_short] }}</div>
+@if (matchups$ | async; as matchups) {
+    @if (matchups.length === 0) {
+        <div>No games with this character</div>
+    } @else {
+        @for (matchup of matchups$ | async; track matchup.char_name) {
+            <div>Out of {{ matchup.total_games }}, you won {{ matchup.wins}} games as {{ selectedCharRoute ? characters[selectedCharRoute] : '' }} against {{ characters[matchup.char_short] }} 
+                for a {{ ((matchup.wins/matchup.total_games) * 100).toFixed(2) }}% win rate
+            </div>
+        }
     }
 }
