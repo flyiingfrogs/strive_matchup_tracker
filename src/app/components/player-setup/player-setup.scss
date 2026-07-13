@@ -1,3 +1,11 @@
 .player-name{
     cursor: pointer;
 }
+
+.player-btn {
+    background: var(--accent);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
