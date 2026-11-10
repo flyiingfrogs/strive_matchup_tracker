@@ -13,12 +13,12 @@ export class PuddleFarmService {
   constructor(private http: HttpClient) {}
 
   searchPlayer(name: string): Observable<SearchResponse> {
-    return this.http.get(`/api/player/search?search_string=${name}`, { responseType: 'text'}).pipe(
+    return this.http.get(`ggst/api/player/search?search_string=${name}&exact=false`, { responseType: 'text'}).pipe(
       map(text => JSON.parse(text.replace(/"id":(\d+)/g, '"id":"$1"')) as SearchResponse)
     );
   }
 
   getPlayerMatchups(playerId: string, charId: string, history: number = this.ALL_TIME_DURATION): Observable<MatchupCharResponse> {
-    return this.http.get<MatchupCharResponse>(`/api/matchups/${playerId}/${charId}/${history}`)
+    return this.http.get<MatchupCharResponse>(`ggst/api/matchups/${playerId}/${charId}/${history}`)
   }
 }
